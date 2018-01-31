@@ -28,8 +28,17 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         initComponents();
         //inicializo la imagen del label del ahorcado
         dibujaImagen(0);
+    
+        checkbarras();
     }
+ private void checkbarras() {
+        String barras = "";
+        for (int i = 0; i < palabraOculta.length(); i++) {
+            barras += "_ ";
+            jLabel1.setText(barras);
+        }
 
+    }
     private void chequeaLetra(String letra){
         letra = letra.toUpperCase();
         String palabraConGuiones = jLabel1.getText();
