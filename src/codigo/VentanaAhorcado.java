@@ -7,6 +7,7 @@ package codigo;
 
 import java.awt.Image;
 import java.net.URL;
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -28,8 +29,18 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         initComponents();
         //inicializo la imagen del label del ahorcado
         dibujaImagen(0);
+	palabraOculta = escogePalabra();
     }
 
+        private String escogePalabra(){
+	String palabra = "CETYS";
+	String[] listaPalabras = {"hola","adios","esternocleidomastoideo","piña","CETYS"};
+	Random random = new Random();
+	palabra = listaPalabras[random.nextInt(listaPalabras.length)];
+	palabra = palabra.toUpperCase();
+	return palabra;
+    }
+    
     private void chequeaLetra(String letra){
         letra = letra.toUpperCase();
         String palabraConGuiones = jLabel1.getText();
