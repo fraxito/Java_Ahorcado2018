@@ -30,8 +30,17 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         //inicializo la imagen del label del ahorcado
         dibujaImagen(0);
 	palabraOculta = escogePalabra();
+        checkbarras();
     }
 
+    
+    private void checkbarras() {
+        String barras = "";
+        for (int i = 0; i < palabraOculta.length(); i++) {
+            barras += "_ ";   
+        }
+ 	jLabel1.setText(barras);	 
+    }
         private String escogePalabra(){
 	String palabra = "CETYS";
 	String[] listaPalabras = {"hola","adios","esternocleidomastoideo","piña","CETYS"};
@@ -65,8 +74,10 @@ public class VentanaAhorcado extends javax.swing.JFrame {
     }
     
     private void chequeaBoton(JButton _boton){
-        _boton.setEnabled(false);
-        chequeaLetra(_boton.getText());
+        if(_boton.isEnabled()){
+             _boton.setEnabled(false);
+             chequeaLetra(_boton.getText());
+         }
     }
     
     private void dibujaImagen (int numeroImagen){
