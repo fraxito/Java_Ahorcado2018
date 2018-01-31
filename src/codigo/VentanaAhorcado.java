@@ -65,8 +65,11 @@ public class VentanaAhorcado extends javax.swing.JFrame {
     }
     
     private void chequeaBoton(JButton _boton){
-        _boton.setEnabled(false);
-        chequeaLetra(_boton.getText());
+        if(_boton.isEnabled()){
+            _boton.setEnabled(false);
+            chequeaLetra(_boton.getText());
+        }
+        
     }
     
     private void dibujaImagen (int numeroImagen){
